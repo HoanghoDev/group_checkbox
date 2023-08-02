@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+:root{
+    --blue: #5a5ac6;
+    --light: #bbb;
+}
+body{
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    font-family: 'Montserrat', sans-serif;
+}
+.group{
+    text-align: center;
+}
+.group input.checkbox{
+    display: none;
+}
+.group .list{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 20px;
+}
+.group .list .item{
+    border: 1px solid var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.5s;
+}
+.group .list .item .check{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--light);
+}
+.group .list .item .check i:nth-child(2){
+    display: none;
+}
+.group .list .item h2{
+    margin: 0;
+    font-weight: 100;
+    font-size: 15px;
+}
+.group .list .item .logo-type{
+    font-size: 33px;
+    margin-bottom: 5px;
+}
+
+input.checkbox:checked + .item{
+    border: 1px solid var(--blue);
+    box-shadow: 0 1px 5px var(--blue);
+    color: var(--blue);
+}
+input.checkbox:checked + .item .check i:nth-child(1){
+    display: none;
+}
+input.checkbox:checked + .item .check i:nth-child(2){
+    display: block;
+    color: var(--blue);
+}
+
